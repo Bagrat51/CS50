@@ -8,6 +8,7 @@ int main(int argc, string argv[])
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
+        return 1;
         exit(0);
     }
     else if (argc == 2)
@@ -26,7 +27,7 @@ int main(int argc, string argv[])
             text[i] %= 26;
             text[i] += 96;
         }
-        else if (text[i] > 64 && text[1] <= 90)       // get a bug won't encryt upercase and lowercaese toghether
+        else if (text[i] > 64 && text[i] <= 90)
         {
             text[i] -= 64;
             text[i] += key;
