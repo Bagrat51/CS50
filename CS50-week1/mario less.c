@@ -6,21 +6,21 @@ int main(void)
     int n;
     do
     {
-        n = get_int("%s", "height: ");
+        num = get_int("insert number: ");
     }
-    while (n <= 8 && n <= 1);
-    
-    for (int i = 0; i < n; i++ )
+    while (num < 1 || num > 8);
+
+    for (int i = 0; i < num; i++)
     {
-        for (int j = 0; j < n - i; j++)
+        for (int j = 1; j < num - i; j++)
         {
             printf(" ");
         }
-        
-        for(int j = -1; j < i; j++)
+        for (int j = -1; j < i; j++)
         {
             printf("#");
         }
         printf("\n");
     }
 }
+
