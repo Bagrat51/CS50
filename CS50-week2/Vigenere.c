@@ -30,11 +30,23 @@ int main(int argc, string argv[])
     {
         key = argv[1];
     }
+    for(i=o i< lingth key i++){
+    	if( (key[i] >96  && key[i]<=122) ||  	(key[i] >=65  && key[i]>=90))
+    	{
+    		continue
+    	}
+		else
+		{
+			exit(0)
+		}
+    }
     string text = get_string("Insert text: "); // how exclude numbers from string ??
     //main crypter
+    int x = 0;
     for (int i = 0; i < text[i] ; i++)
     {
-        int j = i % strlen(key); //      dont repeat on smbols?? 
+    	
+        int j = x % strlen(key); //      dont repeat on smbols?? 
         if (text[i] <= 122 && text[i] > 96)
         {
             text[i] -= 96;
@@ -42,6 +54,7 @@ int main(int argc, string argv[])
             text[i] += shift(key[j]);
             text[i] %= 26;
             text[i] += 96;
+            x++;
         }
         else if (text[i] >= 64 && text[i] <= 90)
         {
@@ -49,6 +62,7 @@ int main(int argc, string argv[])
             text[i] += shift(key[j]);
             text[i] %= 26;
             text[i] += 64;
+            x++;
         }       
     }
     printf("ciphertext: %s\n", text);
